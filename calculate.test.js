@@ -26,7 +26,7 @@ test('return false if any of the arguments is a string', () => {
 }) */
 
 // Subtraction test
-test('Subtracts 4 - 2 toBe 2', () => {
+/* test('Subtracts 4 - 2 toBe 2', () => {
     expect(typeof subtract(4, 2)).toBe('number')
 })
 
@@ -53,3 +53,4 @@ test('Subtract 10 - 10 toBe 0', () => {
 test('Subtracts 4 - 2 toBe 2', () => {
     expect( subtract(4, 2)).toBe(2)
 })
+*/
