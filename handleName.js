@@ -23,5 +23,5 @@ let handleName = (name) => {
 
 module.exports = handleName
 
-console.table(handleName("David")) // 0 => David
-console.table(handleName("David Wampamba")) //False
+// console.table(handleName("David")) // 0 => David
+// console.table(handleName("David Wampamba")) //False
