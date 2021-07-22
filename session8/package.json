@@ -1,0 +1,11 @@
+{
+  "name": "session8",
+  "version": "0.0.1",
+  "description": "About Events and Forms",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "davidofug",
+  "license": "ISC"
+}
