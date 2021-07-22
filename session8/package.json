@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "description": "About Events and Forms",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
   "author": "davidofug",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
 }
