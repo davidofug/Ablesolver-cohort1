@@ -8,7 +8,7 @@ test('Must be a function', () => {
     expect(typeof result === 'string').toBe(true)
 })
 
-describe('Picking input', () => {
+describe('Input validation', () => {
     test("validateInput Must be a function", () => {
         expect(typeof validateInput === 'function').toBeTruthy()
     });
