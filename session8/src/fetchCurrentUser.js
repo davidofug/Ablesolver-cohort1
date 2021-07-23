@@ -8,8 +8,8 @@ let parseJSON = user => {
 
 let fetchCurrentUser = callback => {
   return  fetch("http://example.com/currentUser")
-          .then((response) => response.json())
-          .then((data) => callback(parseJSON(data)));
+          .then(response => response.json())
+          .then(data => callback(parseJSON(data)));
 }
 
 module.exports = fetchCurrentUser;
