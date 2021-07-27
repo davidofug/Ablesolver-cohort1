@@ -25,7 +25,15 @@ let doLoginOnClick = () => {
     }
 
     console.log(USERNAME, PASSWORD)
-    
+
+    let userInfo = {
+        'username': USERNAME,
+        'password': PASSWORD
+    }
+
+    let userInfoJSON = JSON.stringify(userInfo)
+    localStorage.setItem('user', userInfoJSON)
+
     alert('Login successful')
     
     document.getElementById("login").reset();
