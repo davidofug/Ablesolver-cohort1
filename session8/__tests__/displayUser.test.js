@@ -4,7 +4,7 @@
 // __tests__/displayUser-test.js
 "use strict";
 /**
- * Read about the use strict in JavaScript and record your in an audio explaining what you've understood about it. Then send the audio to Ablestate email before end of Sunday 25th July.
+ * Read about the use strict in JavaScript and record an audio of yourself explaining what you understood. Send the recording to Ablestate email before end of Sunday 25th July.
  */
 jest.mock("../src/fetchCurrentUser");
 
