@@ -14,12 +14,12 @@
         <form>
             <div class="mb-3">
                 <label for="useremail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="useremail" aria-describedby="emailHelp">
+                <input type="email" onBlur="CHECK_EMPTY(event)" class="form-control" id="useremail" aria-describedby="emailHelp" required>
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
                 <label for="userpassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="userpassword">
+                <input type="password" onBlur="CHECK_EMPTY(event)" class="form-control" id="userpassword" required>
             </div>
             <!-- <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -33,4 +33,4 @@
     <script src="src/validator.js"></script>
     <script src="src/handle.submission.js"></script>
 </body>
-</html>
+</html> 
