@@ -1,7 +1,10 @@
 const TABLE_DATA = document.getElementById('table-data')
 let generatedHTMLRows = ''
 
-//Explain the fetch() function
+/** 
+* Read this resource https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch and 
+* Explain the fetch() function
+*/
 
 fetch("https://jsonplaceholder.typicode.com/todos")
     .then( response => response.json() )
