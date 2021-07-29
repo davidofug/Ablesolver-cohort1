@@ -6,7 +6,8 @@ let handleSubmit = (event) => {
 
     event.preventDefault()
 
-    let isValidEmail = CHECK_EMPTY(null, USER_EMAIL) 
+    let isValidEmail = CHECK_EMPTY(null, USER_EMAIL)
+    
     let isValidPassword = CHECK_EMPTY(null, USER_PASSWORD)
     
     if ( isValidEmail && isValidPassword ) {
