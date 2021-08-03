@@ -1,7 +1,6 @@
 // const TABLE_DATA = document.getElementById('table-data')
 const TABLE_DATA = document.querySelector('#table-data')
 const PAGINATION = document.querySelector('#pagination')
-let generatedTableRows = ''
 
 document.body.addEventListener('click', (event) => { //Event delegation
   // console.log(event.target.dataset.page)
@@ -20,8 +19,8 @@ document.body.addEventListener('click', (event) => { //Event delegation
 let todos = []
 
 let retrieveWithPagination = (page = 1, numberOfItemsPerPage = 10) => {
-  let buttons = "";
-
+  let buttons = "", generatedTableRows = "";
+  
   fetch("https://jsonplaceholder.typicode.com/todos") // Retrieve todos
     .then((response) => response.json())
     .then((json) => {
@@ -36,13 +35,13 @@ let retrieveWithPagination = (page = 1, numberOfItemsPerPage = 10) => {
 
       let i = 1;
 
-      while (i < MAX_PAGES) {
+      while (i <= MAX_PAGES) {
         //Generate buttons
         buttons += `<button data-page="${i}" >${i}</button>`
         i++;
       }
     }).then(() => {
-
+      // console.log(todos)
       if (todos && todos.length > 0) {
         // Check whether there are some todos
 
