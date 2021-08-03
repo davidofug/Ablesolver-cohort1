@@ -7,7 +7,8 @@ document.body.addEventListener('click', (event) => { //Event delegation
   // console.log(event.target.dataset.page)
   if (event.target.dataset.page) {
     let { page } = event.target.dataset;
-    retrieveWithPagination(page)
+    let per_page = 10
+    retrieveWithPagination(page, per_page )
     // console.log(page);
   }
 })
@@ -18,7 +19,7 @@ document.body.addEventListener('click', (event) => { //Event delegation
 */
 let todos = []
 
-let retrieveWithPagination = (page = 1) => {
+let retrieveWithPagination = (page = 1, numberOfItemsPerPage = 10) => {
   let buttons = "";
 
   fetch("https://jsonplaceholder.typicode.com/todos") // Retrieve todos
@@ -27,11 +28,12 @@ let retrieveWithPagination = (page = 1) => {
 
       // console.log(json.length)
       // Generate pagination
-      let numberOfItemsPerPage = 10;
+      // let numberOfItemsPerPage = 10;
       const MAX_PAGES = Math.floor(json.length / numberOfItemsPerPage);
-      let index = page;
-    
-      todos = json.slice(index - 1, numberOfItemsPerPage);
+
+      const START_POSITION = (page - 1) * numberOfItemsPerPage;
+      todos = json.slice(START_POSITION).slice(0, numberOfItemsPerPage);
+
       let i = 1;
 
       while (i < MAX_PAGES) {
