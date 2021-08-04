@@ -129,6 +129,7 @@ let sendTodoToAPI = (title) => {
       if (id) {
         TODO_FORM.reset()
         // TODO_FORM.classList.add('was-validated')
+        document.getElementById('todo-id').innerText = id
         // document.getElementById('title').value = ''
         document.getElementById('todo-alert').classList.remove('d-none').add('d-block')
       }
