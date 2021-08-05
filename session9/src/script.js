@@ -82,8 +82,8 @@ let retrieveWithPagination = (page = 1, numberOfItemsPerPage = 10) => {
                         class="btn-group"
                         role="group" aria-label="Basic example"
                       >
-                        <button onClick="todoDelete(${id},event)" class="btn btn-danger">Delete</button>
-                        <button onClick="todoEdit(${id},event)" class="btn btn-info">Edit</button>
+                        <button onClick="todoDelete(${id})" class="btn btn-danger">Delete</button>
+                        <button onClick="todoEdit(${id})" class="btn btn-info">Edit</button>
                       </div>
                     </td>
                 </tr>`; //Explain this block of code
@@ -148,7 +148,15 @@ let sendTodoToAPI = (title) => {
 };
 
 let todoDelete = todoID => {
-  console.log(todoID)
+  let confirmation = confirm(`Are you sure you want to delete item #${todoID}?`)
+  if (!confirmation) return
+  
+  fetch(`https://jsonplaceholder.typicode.com/todos/${todoID}`, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then((json) => retrieveWithPagination())
+    .catch((error) => console.log(error));
 }
 
 let todoEdit = todoID => {
