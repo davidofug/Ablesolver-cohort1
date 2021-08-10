@@ -9,8 +9,15 @@ const PORT = process.env.PORT || 8888 // Use the port from the .env otherwise as
 const SERVER = HTTP.createServer((request,response) => {
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/plain')
-    let { SALT } = process.env
+    //To send environment variables at the process you can do 
+    // ENV_NAME=ENV_VALUE node filename at the CLI
+    //OR add them to the .env file.
+    //Then add the dotenv package to your node app
+    // -> yarn add dotenv or npm add dotenv
+    // -> require('dotenv').config() recommended be added at the top of the file
+    //Tip: Always ignore the .env and node_modules using .gitignore feature
     
+    let { SALT } = process.env
     response.end(process.env.PUBLIC_KEY)
 })
 
