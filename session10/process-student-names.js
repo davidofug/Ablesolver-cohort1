@@ -12,17 +12,19 @@ const { HOSTNAME, PORT } = process.env
 const SERVER = HTTP.createServer((request, response) => {
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html')
-        const { argv } = process;
-        let html = ''
-        if (argv.length > 0) {
-          argv.forEach((name) => {
-              html += `<p>${ name }</p>`;
-          });
-        }
+
+    const { argv } = process;
+    let html = ''
+    if (argv.length > 0) {
+        argv.forEach((name) => {
+            html += `<p>${ name }</p>`;
+        });
+    }
+
     response.end(`<h1>Server running!</h1> ${html}`)
 })
 
-SERVER.listen(PORT,HOSTNAME, () => {
+SERVER.listen(PORT, HOSTNAME, () => {
     console.log(`Server running at ${HOSTNAME}:${PORT}`)
     const { argv } = process
 

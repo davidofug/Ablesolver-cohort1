@@ -3,7 +3,7 @@ const HTTP = require('http')
 
 require('dotenv').config()
 
-const HOSTNAME = '127.0.0.1' //localhost
+const HOSTNAME = '127.0.0.1' //or localhost
 const PORT = process.env.PORT || 8888 // Use the port from the .env otherwise assign 8888
 
 const SERVER = HTTP.createServer((request,response) => {
