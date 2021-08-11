@@ -7,18 +7,21 @@ const HOSTNAME = '127.0.0.1' //localhost
 const PORT = process.env.PORT || 8888 // Use the port from the .env otherwise assign 8888
 
 const SERVER = HTTP.createServer((request,response) => {
-    response.statusCode = 200
-    response.setHeader('Content-Type', 'text/plain')
-    //To send environment variables at the process you can do 
-    // ENV_NAME=ENV_VALUE node filename at the CLI
-    //OR add them to the .env file.
-    //Then add the dotenv package to your node app
-    // -> yarn add dotenv or npm add dotenv
-    // -> require('dotenv').config() recommended be added at the top of the file
-    //Tip: Always ignore the .env and node_modules using .gitignore feature
+  response.statusCode = 200
+  response.setHeader('Content-Type', 'text/plain')
+  //To set environment variables at the process you can follow this 
+  //ENV_NAME=ENV_VALUE node filename at the CLI
+  //or add them to the .env file.
+  //Add the dotenv package to your node app. Following the steps below.
+  //1. yarn add dotenv or npm install dotenv
+  //2. require('dotenv').config() recommended be added at the top of the file
+  //Tip: It's recommended to ignore the .env and node_modules using .gitignore feature. For example
+  // echo .env > .gitignore
+  // echo node_modules/ >> .gitignore
     
-    let { SALT } = process.env
-    response.end(process.env.PUBLIC_KEY)
+  let { APP_NAME } = process.env
+
+    response.end(`${APP_NAME}\n${process.env.PUBLIC_KEY}`)
 })
 
 SERVER.listen(PORT, HOSTNAME,() => {
