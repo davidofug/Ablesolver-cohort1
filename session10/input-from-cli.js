@@ -4,15 +4,19 @@ const HTTP = require('http')
 
 require('dotenv').config()
 
-const HOSTNAME = '127.0.0.1' 
-const PORT = process.env.PORT || 8890 
-const SERVER = HTTP.createServer((request,response) => {
+const HOSTNAME = process.env.HOSTNAME ?? '127.0.0.1' 
+const PORT = process.env.PORT ?? 8890
+
+const SERVER = HTTP.createServer((request, response) => {
+  
   response.statusCode = 200
   response.setHeader('Content-Type', 'text/plain')
-    
-  let { APP_NAME } = process.env
+  // let APP_NAME = process.env.APP_NAME
+  // let { APP_NAME } = process.env
 
-    response.end(`${APP_NAME}\n${process.env.PUBLIC_KEY}`)
+  let { env:{APP_NAME} } = process
+
+  response.end(`${APP_NAME}\n${process.env.PUBLIC_KEY}`)
 })
 
 SERVER.listen(PORT, HOSTNAME,() => {
