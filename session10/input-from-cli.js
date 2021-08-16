@@ -37,7 +37,7 @@ SERVER.listen(PORT, HOSTNAME,() => {
       let accepted = ["Quit", "quit", "q", "Q"];
     //   accepted.includes(input) && process.kill(process.pid, "SIGTERM");
       accepted.includes(input) ? process.kill(process.pid, "SIGTERM") : console.log(`You entered ${input}`);
-
+      readline.close()
     });
 })
 
