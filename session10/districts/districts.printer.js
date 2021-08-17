@@ -17,6 +17,9 @@ inquirer.prompt(questions).then(answer => {
     if (response == 'Yes') {
         if (districts.length > 0)
             console.log(districts.join("\n"))
+            // for (district of districts) {
+            //     console.log(district)
+            // }
     }
     else
         console.log('Okay! Good bye')
