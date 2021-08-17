@@ -4,7 +4,7 @@ const QUESTIONS = [
     {
         type: 'input',
         name: 'name',
-        message: "Username"
+        message: 'Username'
     },
     {
         type: 'password',
