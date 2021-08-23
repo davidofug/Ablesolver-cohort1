@@ -1,9 +1,9 @@
 .env
 node_modules/
-../session9
-../session8
-../session7
-../session6
+../session9/
+../session8/
+../session7/
+../session6/
 arithmeticpackage
 districts
 app.js
