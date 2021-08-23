@@ -4,3 +4,9 @@ node_modules/
 ../session8
 ../session7
 ../session6
+app.js
+input-from-cli.js
+other-types-of-question-cli.js
+process-student-names.js
+REPL session.md
+use.arithmeticlibrary.js
