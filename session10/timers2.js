@@ -40,7 +40,7 @@
 //   // otherwise do things
 // }, 1000);
 
-let payroll = [
+/* let payroll = [
     {
         "salary": "UGX 15M",
         "paydate": "25th",
@@ -77,4 +77,18 @@ const PAYROLL_INTERVAL_ID = setInterval(() => {
         console.log(payroll)
     }
 
-},1000)
+}, 1000) */
+
+// Recusive setTimeout
+
+let times = 0
+const printMyName = () => {
+  // do something
+    console.log(`Printed :${times}`)
+    times+=4
+    const id = setTimeout(printMyName, 1000);
+    if (times === 36)
+        clearInterval(id)
+};
+
+setTimeout(printMyName, 1000);
