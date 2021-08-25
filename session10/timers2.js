@@ -79,16 +79,15 @@ const PAYROLL_INTERVAL_ID = setInterval(() => {
 
 }, 1000) */
 
-// Recusive setTimeout
+// Recursive setTimeout
 
 let times = 0
 const printMyName = () => {
-  // do something
-    console.log(`Printed :${times}`)
-    times+=4
-    const id = setTimeout(printMyName, 1000);
+    console.log(`Printed: ${times}`)
+    times += 4
+    const id = setTimeout(printMyName, 1000)
     if (times === 36)
         clearInterval(id)
-};
+}
 
-setTimeout(printMyName, 1000);
+setTimeout(printMyName, 1000)
