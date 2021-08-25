@@ -30,23 +30,46 @@ const IS_IT_DONE = new Promise((resolve, reject) => {
 CHECK_IF_DONE() */
 
 //Import the file system module 'fs' and assign it to a variable
-const FS = require('fs')
+// const FS = require('fs')
 
-const READ_FILE = (fileName) => {
-    //Create and return a promise 
-    return new Promise((resolve, reject) => {
-        //use the readFile(filename, encoding, callback) method of the fs module
-        FS.readFile(fileName, 'utf8', (err, data) => {
-            if (err) {
-                reject(err) //Reject the promise 
-                return //And stop code execution
-            }
-            resolve(data) //Resolve with data
-        })
-    })
+// const READ_FILE = (fileName) => {
+//     //Create and return a promise 
+//     return new Promise((resolve, reject) => {
+//         //use the readFile(filename, encoding, callback) method of the fs module
+//         FS.readFile(fileName, 'utf8', (err, data) => { // Specify the encoding to get a readable buffer
+//             if (err) {
+//                 reject(err) //Reject the promise 
+//                 return //And stop code execution
+//             }
+//             resolve(data) //Resolve with data
+//         })
+//     })
+// }
+
+// //Use the promise above.
+// READ_FILE('./readme.md')
+//     .then(data => console.log(data))
+//     .catch(error => console.log(error))
+
+const fetch = require('node-fetch')
+
+const STATUS = response => {
+
+    let { status, statusText } = response
+
+    if (status >= 200 && status < 300)
+        return Promise.resolve(response)
+
+    return Promise.reject(new Error(statusText))
+    
 }
 
-//Use the promise above.
-READ_FILE('./readme.md')
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
+const JSON = response => response.json()
+
+fetch("https://jsonplaceholder.typicode.com/todo")
+  .then(STATUS)
+  .then(JSON)
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => console.log(error));
