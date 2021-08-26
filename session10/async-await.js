@@ -30,8 +30,9 @@ WAIT_FOR_BETTER_PROMISE().then(result => {
     result += '\nGood bye!'
     console.log(result)
 }).catch(error => console.log(error))
- */
-//Import the file system module 'fs' promises and assign it to a variable
+**/
+
+//Import the file system module 'fs' promises & assign it to a variable
 const FS = require('fs').promises
 
 const READ_FILE = async (fileName) => {
@@ -39,6 +40,6 @@ const READ_FILE = async (fileName) => {
     return Buffer.from(results).toString() //Return the Buffer as a string
 }
 
-READ_FILE('readme.md').then(result => {
-    console.log(result)
-}).catch(error => console.error(error))
+READ_FILE('readme.md')
+    .then(result => console.log(result))
+    .catch(error => console.error(error))
