@@ -8,7 +8,7 @@ const BETTER_PROMISE = async function () {
 // console.log(BETTER_PROMISE_CONSUMER) will output => Promise { 'Indeed awesome!' }
 
 // To out put the actual string(value)
-BETTER_PROMISE().then(result => console.log(result))
+// BETTER_PROMISE().then(result => console.log(result))
 
 //2. Chaining Promises in Async/await
 
@@ -27,6 +27,6 @@ const WAIT_FOR_BETTER_PROMISE = async () => {
 }
 
 WAIT_FOR_BETTER_PROMISE().then(result => {
-    result + '\n Good bye!'
+    result += '\nGood bye!'
     console.log(result)
 }).catch(error => console.log(error))
