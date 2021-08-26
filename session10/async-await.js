@@ -36,7 +36,7 @@ WAIT_FOR_BETTER_PROMISE().then(result => {
 const FS = require('fs').promises
 
 const READ_FILE = async (fileName) => {
-    let results = await FS.readFile(fileName, 'utf8') // Specify the encoding to get a readable buffer
+    let results = await FS.readFile(fileName, 'utf8') //Here the encoding is optional.
     return Buffer.from(results).toString() //Return the Buffer as a string
 }
 
