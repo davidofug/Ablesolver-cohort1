@@ -27,3 +27,5 @@ request-handling-2.js
 file-manage.js
 logs
 test.txt
+file-path.js
+file-stats.js
