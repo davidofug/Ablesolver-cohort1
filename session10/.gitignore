@@ -29,3 +29,5 @@ logs
 test.txt
 file-path.js
 file-stats.js
+file-path-2.js
+read-file.js
