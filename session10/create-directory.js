@@ -2,9 +2,7 @@ const fs = require('fs')
 
 const folderName = 'test'
 const folderName2 = "/Users/davidofug/Workspace/Ablesolver-cohort1/session10/test2"
-
 try {
-
     if (!fs.existsSync(folderName)) {
         fs.mkdirSync(folderName)
         console.log('Folder created successfully!')
@@ -18,7 +16,6 @@ try {
     } else {
         console.log(`Directory ${folderName2} exists`)
     }
-
 } 
 catch (err) {
     console.error(err)
