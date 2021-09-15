@@ -2,15 +2,14 @@ const fs = require('fs')
 const path = require('path')
 const folderPath = 'test'
 
-// const folderPath = 'test/subtest'
-//Read contents of the directory. e.g: Folders and files and see the relative paths
-// try{
-//     const dirContents = fs.readdirSync(folderPath)
-//     console.log(dirContents)
-
-// } catch(err) {
-//     console.error(err)
-// }
+/* const folderPath = 'test/subtest'
+Read contents of the directory. e.g: Folders and files and see the relative paths
+try{
+    const dirContents = fs.readdirSync(folderPath)
+    console.log(dirContents)
+} catch(err) {
+    console.error(err)
+} */
 
 //Read contents of the directory. e.g: Folders and files and see the absolute/full paths
 
