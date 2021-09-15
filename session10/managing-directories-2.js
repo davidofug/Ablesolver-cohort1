@@ -5,20 +5,21 @@ const folderName2 = "/Users/davidofug/Workspace/Ablesolver-cohort1/session10/tes
 
 try {
 
-  if (!fs.existsSync(folderName)) {
-    fs.mkdirSync(folderName)
-    console.log('Folder created successfully!')
-  } else {
-      console.log(`Directory ${folderName} exists`)
-  }
+    if (!fs.existsSync(folderName)) {
+        fs.mkdirSync(folderName)
+        console.log('Folder created successfully!')
+    } else {
+        console.log(`Directory ${folderName} exists`)
+    }
 
-  if(!fs.existsSync(folderName2)) {
-    fs.mkdirSync(folderName2)
-    console.log('Folder2 created successfully!')
-  } else {
-    console.log(`Directory ${folderName2} exists`)
- }
+    if(!fs.existsSync(folderName2)) {
+        fs.mkdirSync(folderName2)
+        console.log('Folder2 created successfully!')
+    } else {
+        console.log(`Directory ${folderName2} exists`)
+    }
 
-} catch (err) {
-  console.error(err)
+} 
+catch (err) {
+    console.error(err)
 }
