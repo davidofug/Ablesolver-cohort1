@@ -35,3 +35,12 @@ converttophp.js
 managing-directories.js
 negative-words.php
 negative-words.txt
+write-files.js
+test1.txt
+test2.txt
+return-files-only.js
+create-directory.js
+read-directory-contents.js
+images/
+test/
+test2/
