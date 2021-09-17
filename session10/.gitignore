@@ -44,3 +44,5 @@ read-directory-contents.js
 images/
 test/
 test2/
+remove-delete-directories.js
+rename-directories.js
